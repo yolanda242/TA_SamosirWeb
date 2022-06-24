@@ -71,6 +71,7 @@ class LoginController extends Controller
             $request->session()->put('id_admin', $check->id);
             $request->session()->put('username', $request->input('username'));
             $request->session()->flash('status', 'Success');
+            $request->session()->flash('message', 'Login berhasil');
             return redirect('/admin/home');
         }
     }
@@ -99,10 +100,7 @@ class LoginController extends Controller
      * @param ss \App\Models\Login  $login
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Login $login)
-    {
-        //
-    }
+
 
     /**
      * Remove the specified resource from storage.
@@ -127,25 +125,6 @@ class LoginController extends Controller
         }else{
             return redirect()->back()->with('failed-change','Maaf, password gagal diganti!');
         }
-        
-
-        // $old_password   = auth()->user()->password;
-        // $admin_id       = auth()->user()->id;
-
-        // if(Hash::check($request->input('old_password'), $old_password)){
-        //     $user = Admin::find($admin_id);
-        //     $admin_id->password = Hash::make($request->input('password'));
-
-        //     if($user->save()){
-        //         return redirect()->back()->with('success', 'Change Password berhasil');
-        //     }
-        //     else{
-        //         return redirect()->back()->with('failed', 'Change Password gagal');
-        //     }
-        // }
-        // else{
-        //     return redirect()->back()->with('failed', 'Password lama invalid');
-        // }
     }
 }
 

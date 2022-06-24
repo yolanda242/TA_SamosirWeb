@@ -47,25 +47,21 @@
         <div class="form-floating">
           <input type="username" class="form-control @error('username') is-invalid @enderror" id="floatingInput" name="username" placeholder="username" required>
           <label for="floatingInput">Username<span class="text-danger"> *</span></label>
-            @error('username')
-              <span class="invalid-feedback">
-                  <strong>Usename harus di isi</strong>
-              </span>
-            @enderror
         </div>
         
         <div class="form-floating">
           <input type="password" class="form-control @error('password') is-invalid @enderror" id="floatingPassword" name="password" placeholder="Password" required>
           <label for="floatingPassword">Password<span class="text-danger"> *</label>
-          @error('password')
-              <span class="invalid-feedback">
-                  <strong>Password harus diisi</strong>
-              </span>
-            @enderror
         </div>
 
         @if (session('status') == 'Failed')
-        <div class="alert alert">
+        <div class="alert alert-danger" role="alert">
+          <p>{{ session('message') }}</p>
+        </div>
+        @endif
+
+        @if (session('status') == 'Success')
+        <div class="alert alert-success" role="alert">
           <p>{{ session('message') }}</p>
         </div>
         @endif

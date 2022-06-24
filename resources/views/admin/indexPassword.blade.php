@@ -2,11 +2,8 @@
 
 @section('content') 
 
-
-<div class="content-wrapper">
-    <div class="container-wrapper">
-        
-        <div class="card">
+    <div class="content-wrapper">
+        <div class="card m-4 p-4">
             <div class="card-header"><strong><h3>Change Password</h3></strong>
                 <form action="{{ route('ubah_password') }}" method="POST" class="border p-3 rounded">
                     @if(session()->has('failed-change'))
@@ -48,28 +45,8 @@
                         </div>
                     </div>
                 </form>
-
-                {{-- @if (Session::get('success'))
-                <div class="alert alert-success-dismissible fade show" role="alert">
-                    {{ Session::get('success') }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>    
-                @endif
-
-                @if (Session::get('failed'))
-                <div class="alert alert-danger-dismissible fade show" role="alert">
-                    {{ Session::get('failed') }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>    
-                @endif --}}
-
             </div>
         </div>
     </div>
-</div>
 
 @endsection
