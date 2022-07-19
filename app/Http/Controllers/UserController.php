@@ -13,15 +13,46 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     public function index(){
-      $objwisata = DB::table('objek_wisatas')->get();
-      $event = DB::table('events')->get();
+      $objwisata = DB::table('objek_wisatas')->limit(3)->get();
+      $event = DB::table('events')->limit(3)->get();
       $contact = DB::table('contact')->get();
+      $review = Review::leftjoin('jenis_reviews','reviews.jenisreview_id','=','jenis_reviews.id')->paginate(1);
       return view('user.home', [
-        'objwisata' => ObjekWisata::all(),
-        'event' => Event::all(),
+        'objwisata' => $objwisata,
+        'event' => $event,
         'contact' => Contact::all(),
-        'jenis_review' => JenisReview::all()
+        'jenis_review' => JenisReview::all(),
+        'review' => $review
       ]);
+    }
+
+    public function indexObjek(){
+      $objek_wis = ObjekWisata::all();
+      if(request('search')){
+        $objek_wis= ObjekWisata::where('nama_objek','like', '%'.request('search').'%')->
+        orwhere('lokasi','like', '%'.request('search').'%')->
+        orwhere('deskripsi', 'like', '%'.request('search').'%')->get();
+      }
+
+      $objek = DB::table('objek_wisatas')->get();
+        return view('user.objekWisata', [
+          'objek' => $objek_wis,
+          'contact' => Contact::all()
+        ]);
+    }
+
+    public function indexEvent(){
+      $event = Event::all();
+      if(request('search')){
+        $event = Event::where('nama_event', 'like', '%'.request('search').'%')->
+        orwhere('deskripsi', 'like', '%'.request('search').'%')->
+        orwhere('lokasi', 'like', '%'.request('search').'%')->get();
+      }
+      $even = DB::table('events')->get();
+        return view('user.Event', [
+          'even' => $event,
+          'contact' => Contact::all()
+        ]);
     }
 
     public function createReview(){
@@ -44,15 +75,6 @@ class UserController extends Controller
       Review::create($dataReview);
 
       return redirect()->back()->with('success','Data berhasil di tambahkan');
-
-
-      // $createreview = new Review();
-      // $createreview -> nama = $request->nama;
-      // $createreview -> alamat = $request->alamat;
-      // $createreview -> deskripsi_review = $request->deskripsi_review;
-
-      // $createreview->save();
-      // return redirect('/review');
   }
 
       
@@ -63,7 +85,7 @@ class UserController extends Controller
       return view('user.detailWisata',[
         'detailWisata' => ObjekWisata::find($id),
         'contact' => Contact::all(),
-        'jenis_review' => JenisReview::all()
+        'jenis_review' => JenisReview::all(),
       ]);
   }
 

@@ -3,6 +3,20 @@
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+
+    @if(session()->has('success-update'))
+    <div class="alert alert-warning col-lg-4" role="alert">
+      {{ session('success-update') }}
+    </div>
+    @elseif(session()->has('success-create'))
+    <div class="alert alert-success col-lg-4" role="alert">
+      {{ session('success-create') }}
+    </div>
+    @elseif(session()->has('success-delete'))
+    <div class="alert alert-danger col-lg-4" role="alert">
+      {{ session('success-delete') }}
+    </div>
+    @endif
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -57,6 +71,7 @@
                                       <th scope="col">id</th>
                                       <th scope="col">Contact</th>
                                       <th scope="col">Jenis Contact</th>
+                                      <th scope="col">Link</th>
                                       <th scope="col">Aksi</th>
                                     </tr>
                                   </thead>
@@ -68,6 +83,7 @@
                                       <td>{{ $no++ }}</td>
                                       <td>{{ $value->contact}}</td>
                                       <td>{{ $value->jenis_contact }}</td>
+                                      <td>{{ $value->link }}</td>
                                       <td>
                                         <a href="/contactus/Edit_Contact/{{$value->id}}" class="btn btn-warning btn-sm">Edit</a>
                                         <a href="/contactus/Delete_Contact/{{$value->id}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure want to delete?')">Hapus</a>

@@ -5,6 +5,10 @@
     font-family: "Poppins", sans-serif;
   }
 
+  .nav-link{
+    color: black;
+  }
+
   .container{
     width: max-content;
     height: 60px;
@@ -118,7 +122,7 @@ ul li{
 }
 
 .container-footer{
-  background-color:black;
+  background-color:white;
 }
 
 .button-create{
@@ -221,10 +225,9 @@ h1{
 
 .contact-info{
   color: black;
-  max-width: 500px;
-  line-height: 65px;
+  max-width: 100%;
   padding-left: 20px;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .fa-solid{
@@ -234,20 +237,16 @@ h1{
 
 .review-form{
   max-width: 700px;
-  margin-right: 50px;
-}
-
-.contact-info .review-form{
-  flex: 1;
+  margin-right: 0px;
 }
 
 .review-form{
-  color: #fff;
+  color: rgb(0, 0, 0);
   text-align: center;
   font-size: 12px;
   text-transform: uppercase;
   margin-bottom: 30px;
-  margin-left: 100px;
+  margin-left: 0px;
 }
 
 .review-form .text-box{
@@ -299,7 +298,7 @@ h1{
 }
 
 .section-contact{
-  background:gray;
+  background:#fff;
   color: #fff;
   border: #000;
   width: 100%;
@@ -308,3 +307,35 @@ h1{
   padding-bottom: 0;
 }
 
+.container-rev{
+  background-color: #c6d4e1;
+  border: #000;
+  border-radius: 10px;
+  box-shadow:  0 1px 1px rgb(201, 247, 255);
+}
+
+.carousel-item h5{
+  margin: 5%;
+}
+
+#contact1, td{
+  padding: 8px 20px;
+}
+
+#search{
+  box-shadow:  0 1px 1px rgb(201, 247, 255);
+}
+
+.container-objek .input-group{
+  position: relative;
+  right: 16px;
+}
+
+.container-search{
+  margin-top: 10px;
+  margin-bottom: 8px;
+  position: relative;
+  Left: 800px;
+}
+
+/*https://www.centerklik.com/5-pilihan-warna-dan-kombinasi-web-desiain/

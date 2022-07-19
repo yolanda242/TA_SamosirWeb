@@ -61,10 +61,23 @@ class LoginController extends Controller
             ]
         );
 
+        $checkUsername = Admin::where('username', $request->input('username'))->first();
+        $checkPassword = Admin::where('password', $request->input('password'))->first();
         $check = Admin::where('username', $request->input('username'))->where('password', $request->input('password'))->first();
+
+        if($checkUsername == null && $checkPassword != null){
+            $request->session()->flash('status', 'Failed');
+            $request->session()->flash('message', 'Username incorrect!');
+            return redirect('/admin/login');
+        }elseif($checkPassword == null && $checkUsername != null){
+            $request->session()->flash('status', 'Failed');
+            $request->session()->flash('message', 'Password incorrect!');
+            return redirect('/admin/login');
+        }
+
         if ($check == NULL) {
             $request->session()->flash('status', 'Failed');
-            $request->session()->flash('message', 'Login gagal. Silahkan periksa kembali username / password Anda.');
+            $request->session()->flash('message', 'Username dan password incorrect!');
             return redirect('/admin/login');
         } 
         else {

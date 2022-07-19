@@ -2,6 +2,17 @@
 
 @section('content')
 <!-- Content Wrapper. Contains page content -->
+
+  
+
+@if (session('status') == 'Success')
+
+<script type ="text/JavaScript">  
+alert("{{ session('message') }}")
+</script>
+
+@endif
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -9,22 +20,20 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1 class="m-0">Dashboard</h1>
-                </div><!-- /.col -->
+                </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- /.content-header -->
 
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-info">
@@ -56,29 +65,55 @@
             </div>
 
             <div class="container-fluid-review">
-                <div class="card">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>Review User</h1>
-                        </div>
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Review User</h1>
                     </div>
+                </div>
 
                 <section class="content">
                     <div class="container-fluid">
             
                         <div class="row">
-                            @foreach ($review as $review)
                             <div class="col-md-12">
                                 <div class="card">
-                                    <section id="review"  class="section-bg" >
-                                        <h4 class="card-text">{{ $review->nama}}</h4>
-                                        <h4 class="card-text">{{ $review->alamat }}</h4>
-                                        <h4 class="card-text">{{ $review->jenis_review }}</h4>
-                                        <p class="card-text">{{ $review->deskripsi_review }}</p>
-                                    </section>  
+                                    <div class="card-header">
+                                        <h3 class="card-title">List Review</h3>
+                                    </div>
+            
+                                    <div class="card-body">
+                                        <table id="example1" class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 10px">#</th>
+                                                    <th>Nama</th>
+                                                    <th>Alamat</th>
+                                                    <th>Jenis Review</th>
+                                                    <th>Deskripsi</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+            
+                                            <tbody>
+                                                <?php $no = 1; ?>
+                                                    @foreach ($review as $value)
+                                                        <tr>
+                                                            <td>{{ $no }}</td>
+                                                            <td>{{ $value->nama }}</td>
+                                                            <td>{{ $value->alamat }}</td>
+                                                            <td>{{ $value->nama_review }}</td>
+                                                            <td>{{ Str::limit ($value->deskripsi, 50) }}</td>
+                                                            <td>
+                                                                <a href="/Delete_review/{{$value->id}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure want to delete?')">Hapus</a>
+                                                            </td>
+                                                        </tr>
+                                                <?php $no++; ?>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
-                            @endforeach
                         </div>
                     </div>
                 </section>

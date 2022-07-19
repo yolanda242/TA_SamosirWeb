@@ -4,6 +4,20 @@
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+    @if(session()->has('success-update'))
+    <div class="alert alert-warning col-lg-4" role="alert">
+      {{ session('success-update') }}
+    </div>
+    @elseif(session()->has('success-create'))
+    <div class="alert alert-success col-lg-4" role="alert">
+      {{ session('success-create') }}
+    </div>
+    @elseif(session()->has('success-delete'))
+    <div class="alert alert-danger col-lg-4" role="alert">
+      {{ session('success-delete') }}
+    </div>
+    @endif
+    
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -66,11 +80,12 @@
                                       <?php $no = 1;?>
                                       @foreach ($review as $value)
                                      <tr>
-                                      <td>{{ $no++ }}</td>
-                                      <td>{{ $value->kode_review}}</td>
-                                      <td>{{ $value->nama_review }}</td>
-                                      <td>
-                                        <a href="/jenis/Delete_Review/{{$value->id}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure want to delete?')">Hapus</a>
+                                        <td>{{ $no++ }}</td>
+                                        <td>{{ $value->kode_review}}</td>
+                                        <td>{{ $value->nama_review }}</td>
+                                        <td>
+                                            <a href="/jenis/Delete_Review/{{$value->id}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure want to delete?')">Hapus</a>
+                                        </td>
                                      </tr>
                                      
                                       @endforeach

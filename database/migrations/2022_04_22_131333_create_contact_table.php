@@ -17,6 +17,7 @@ class CreateContactTable extends Migration
             $table->id();
             $table->string('contact', 200);
             $table->string('jenis_contact', 200);
+            $table->text('link')->nullable(true);
             $table->timestamps();
         });
     }

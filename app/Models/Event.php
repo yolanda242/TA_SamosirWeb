@@ -10,5 +10,6 @@ class Event extends Model
     use HasFactory;
     protected $table = "events";
     protected $primaryKey='id';
+    protected $guarded = ['id'];
     public $incrementing = true;
 }

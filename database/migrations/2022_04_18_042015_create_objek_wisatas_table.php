@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('objek_wisatas', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_objek', 100)->nullable(true);
-            $table->string('gambar')->nullable(true);
-            $table->text('deskripsi')->nullable(true);
-            $table->string('lokasi', 200)->nullable(true);
+            $table->string('nama_objek', 100)->nullable();
+            $table->string('gambar')->nullable();
+            $table->text('deskripsi')->nullable();
+            $table->text('lokasi')->nullable();
             $table->timestamps();
         });
     }

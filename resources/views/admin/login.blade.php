@@ -44,16 +44,6 @@
         <img class="mb-4" src="/assets/img/Logo.png" alt="" width="150" height="57">
         <h1 class="h3 mb-3 fw-normal">Login</h1>
 
-        <div class="form-floating">
-          <input type="username" class="form-control @error('username') is-invalid @enderror" id="floatingInput" name="username" placeholder="username" required>
-          <label for="floatingInput">Username<span class="text-danger"> *</span></label>
-        </div>
-        
-        <div class="form-floating">
-          <input type="password" class="form-control @error('password') is-invalid @enderror" id="floatingPassword" name="password" placeholder="Password" required>
-          <label for="floatingPassword">Password<span class="text-danger"> *</label>
-        </div>
-
         @if (session('status') == 'Failed')
         <div class="alert alert-danger" role="alert">
           <p>{{ session('message') }}</p>
@@ -65,7 +55,16 @@
           <p>{{ session('message') }}</p>
         </div>
         @endif
-
+        
+        <div class="form-floating">
+          <input type="username" class="form-control @error('username') is-invalid @enderror" id="floatingInput" name="username" placeholder="username" required>
+          <label for="floatingInput">Username<span class="text-danger"> *</span></label>
+        </div>
+        
+        <div class="form-floating">
+          <input type="password" class="form-control @error('password') is-invalid @enderror" id="floatingPassword" name="password" placeholder="Password" required>
+          <label for="floatingPassword">Password<span class="text-danger"> *</label>
+        </div>
         <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
         <p class="mt-5 mb-3 text-muted">&copy; Kelompok 02</p>
       </form>

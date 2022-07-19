@@ -4,6 +4,7 @@
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -20,30 +21,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <div class="row">
-                
-                <div class="col-md-12">
-                    @if($errors->any())
-                    <div class="alert alert-danger alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h5><i class="icon fas fa-ban"></i> Alert!</h5>
-                        <ul>
-                            foreach ($errors->all() as $message) {
-                            <li>{{ $message }}</li>
-                            }
-                        </ul>
-                    </div>
-                    @endif
 
-                    @if (session('status') == 'Success')
-                    <div class="alert alert-success alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h5><i class="icon fas fa-check"></i> Alert!</h5>
-                        {{ session('message') }}
-                    </div>
-                    @endif
-                </div>
-            </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -52,6 +30,21 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
+
+                            @if(session()->has('success-update'))
+                            <div class="alert alert-warning col-lg-4" role="alert">
+                              {{ session('success-update') }}
+                            </div>
+                            @elseif(session()->has('success-create'))
+                            <div class="alert alert-success col-lg-4" role="alert">
+                              {{ session('success-create') }}
+                            </div>
+                            @elseif(session()->has('success-delete'))
+                            <div class="alert alert-danger col-lg-4" role="alert">
+                              {{ session('success-delete') }}
+                            </div>
+                            @endif
+
                             <table id="example1" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>

@@ -9,4 +9,8 @@ class Review extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+    protected $table='reviews';
+    protected $primaryKey='id';
+    public $incrementing = true;
+
 }

@@ -11,5 +11,6 @@ class ObjekWisata extends Model
     protected $table='objek_wisatas';
     protected $primaryKey='id';
     public $incrementing = true;
+    protected $guarded = ['id'];
 
 }

@@ -24,27 +24,13 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes(['verify' => true]);
 
-// // Route::get('/', [AdminController::class, 'home']);
-// Route::get('/login', [AuthController::class, 'login']);
-// Route::get('/dashboard_admin', [AdminController::class, 'dashboard_admin']);
-// Route::get('/homeAdmin', [AuthController::class, 'homeAdmin']);
-// Route::get('/dashboard', [AdminController::class, 'index']);
-
-// // Route::post('/', [AuthController::class, 'proseslogin']);
-// Route::post('/dashboard', [AdminController::class, 'store']);
-
 // Route untuk fungsi User
 Route::get('/', [UserController::class, 'index']);
 Route::get('/login', [LoginController::class, 'login']);
-Route::get('/objekUser', [UserController::class, 'index']);
+Route::get('/objekUser', [UserController::class, 'indexObjek']);
+Route::get('/eventUser', [UserController::class, 'indexEvent']);
 Route::get('/DetailWisata/{id}', [UserController::class, 'detailWisata']);
 Route::get('/DetailEvent/{id}', [UserController::class, 'detailEvent']);
-
-// Route::get('/login', [LoginController::class, 'login'])->middleware('guest');
-// Route::post('/loginprocess', [LoginController::class, 'proseslogin']);
-// Route::get('/dashboard', [AdminController::class, 'index']);
-// Route::get('/objek_wisata', [AdminController::class, 'objek']);
-
 Route::get('/admin/login', [LoginController::class, 'login']);
 Route::get('/admin/logout', [LoginController::class, 'prosesLogout']);
 Route::post('/admin/prosesLogin', [LoginController::class, 'prosesloginAdmin']);
@@ -86,4 +72,5 @@ Route::post('/review', [UserController::class, 'addReview'])->name('create.addRe
 Route::get('/review/admin/', [AdminController::class, 'indexReview'])->middleware(CheckSession::class);
 Route::get('/TambahJenisReview', [AdminController::class, 'tambahjenisreview'])->middleware(CheckSession::class);
 Route::post('/TambahJenisReview', [AdminController::class, 'addJenisReview'])->name('createdata.addJenisReview')->middleware(CheckSession::class);
-Route::get('/jenis/Delete_Review/{id}', [AdminController::class, 'deleteReview'])->name('deletedata.addreview')->middleware(CheckSession::class);
+Route::get('/jenis/Delete_Review/{id}', [AdminController::class, 'deleteReview'])->name('deletedata.addJenisReview')->middleware(CheckSession::class);
+Route::get('/Delete_review/{id}', [AdminController::class, 'deleteReviewAdmin'])->name('deletedata.addReview')->middleware(CheckSession::class);
