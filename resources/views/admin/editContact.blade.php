@@ -21,7 +21,7 @@
                       <label for="contact" class="col-sm-2 ml-3 col-form-label">Contact</label>
                       <div class="col-sm-7">
                         <input type="text" class="form-control @error('contact') is-invalid @enderror" name="contact" value="{{$edits->contact}}">
-                        @error('contact')<div class="invalid-feedback">{{ $message }}</div> @enderror
+                        @error('contact')<div class="invalid-feedback">Contact Harus Diisi</div> @enderror
                       </div>
                     </div>  
                   
@@ -29,7 +29,7 @@
                       <label for="jenis_contact" class="col-sm-2 ml-3 col-form-label">Jenis Contact</label>
                       <div class="col-sm-7">
                         <input type="text" class="form-control @error('jenis_contact') is-invalid @enderror" name="jenis_contact" value="{{$edits->jenis_contact}}">
-                        @error('jenis_contact')<div class="invalid-feedback">{{ $message }}</div> @enderror
+                        @error('jenis_contact')<div class="invalid-feedback">Jenis Contact Harus Diisi</div> @enderror
                       </div>
                     </div>
                                                           

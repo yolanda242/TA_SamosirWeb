@@ -14,7 +14,7 @@
 
             <div class="row">
                 <div class="col-md-12 mt-4">
-                    <div class="card" style="background-color: rgb(183, 238, 238)">
+                    <div class="card" style="background-color: white">
 						<section id="event"  class="section-bg" >
                             <div class="container-detail">
                                 <div class="row">

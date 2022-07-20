@@ -20,7 +20,7 @@
                       <div class="row mb-4">
                         <label for="nama_event" class="col-sm-2 ml-3 col-form-label">Nama Event</label>
                         <div class="col-sm-7">
-                          <input type="text" id="nama_event" name="nama_event" class="form-control @error('nama_event') is-invalid @enderror"> @error('nama_event')<div class="invalid-feedback">{{ $message }}</div> @enderror
+                          <input type="text" id="nama_event" name="nama_event" class="form-control @error('nama_event') is-invalid @enderror"> @error('nama_event')<div class="invalid-feedback">Nama Event Harus Diisi</div> @enderror
                         </div>
                       </div>  
   
@@ -28,7 +28,7 @@
                         <label for="gambar" class="col-sm-2 ml-3 col-form-label">File Upload</label>
                         <div class="col-sm-7">
                           <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="formFile" name="gambar">
-                          @error('gambar')<div class="invalid-feedback">{{ $message }}</div> @enderror
+                          @error('gambar')<div class="invalid-feedback">Gambar Harus Diisi</div> @enderror
                         </div>
                       </div> 
                         
@@ -38,7 +38,7 @@
                             <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" rows="4" name="deskripsi"></textarea>
                               @error('deskripsi')
                               <div class="invalid-feedback">
-                                {{ $message }}
+                                Deskripsi Harus Diisi
                               </div>
                               @enderror
                           </div>
@@ -50,7 +50,7 @@
                           <input type="text" class="form-control @error('lokasi') is-invalid @enderror" name="lokasi">
                           @error('lokasi')
                             <div class="invalid-feedback">
-                              {{ $message }}
+                              Lokasi Harus Diisi
                             </div>
                           @enderror
                         </div>

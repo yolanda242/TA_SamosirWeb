@@ -14,7 +14,7 @@
         <div class="row">
           <div class="container-search">
             <form action="/eventUser">
-              <div class="input-group mb-4 mt-4">
+              <div class="input-group mb-4 mt-4" style="width: 20rem;">
                 <input type="text" class="form-control" placeholder="Search..." name="search" id="search" value="{{ request('search') }}">
                 <button class="btn btn-success" type="submit" id="button-addon2">Search</button>
               </div>

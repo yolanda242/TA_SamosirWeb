@@ -18,14 +18,14 @@
                       <label for="kode_review" class="col-sm-2 ml-3 col-form-label">Kode Review</label>
                       <div class="col-sm-7">
                         <input type="text" class="form-control @error('kode_review') is-invalid @enderror" name="kode_review">
-                        @error('kode_review')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                        @error('kode_review')<div class="invalid-feedback">Kode Review Harus Diisi</div>@enderror
                       </div>
                     </div>  
                     <div class="row mb-4">
                       <label for="jenis_review" class="col-sm-2 ml-3 col-form-label">Jenis Review</label>
                       <div class="col-sm-7">
                         <input type="text" class="form-control @error('nama_review') is-invalid @enderror" name="nama_review">
-                        @error('nama_review')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                        @error('nama_review')<div class="invalid-feedback">Jenis Review Harus Diisi</div>@enderror
                       </div>
                     </div>
 

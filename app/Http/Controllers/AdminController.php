@@ -159,7 +159,7 @@ class AdminController extends Controller
                 $validatedData['gambar'] = $file;
             } 
             // $validatedData['gambar'] = $file;
-            ObjekWisata::where('id',$event->id)->update($validatedData);
+            Event::where('id',$event->id)->update($validatedData);
             // $update->save();
             return redirect('/admin/event')->with('success-update', 'Data berhasil di update');
            

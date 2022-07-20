@@ -47,7 +47,7 @@
                     </li>
 
                     <li class="nav-item-user">
-                      <a class="nav-link active" href="/objekUser">Object Wisata</a>
+                      <a class="nav-link active" href="/objekUser">Objek Wisata</a>
                     </li>
 
                     <li class="nav-item-user">

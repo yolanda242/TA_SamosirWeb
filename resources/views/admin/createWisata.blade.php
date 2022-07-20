@@ -20,7 +20,7 @@
                       <label for="nama_wisata" class="col-sm-3 ml-3 col-form-label">Nama Objek Wisata</label>
                       <div class="col-sm-7">
                         <input type="text" class="form-control @error('nama_objek') is-invalid @enderror" name="nama_objek">
-                        @error('nama_objek')<div class="invalid-feedback">Nama objek Harus diisi</div> @enderror
+                        @error('nama_objek')<div class="invalid-feedback">Nama objek Harus Diisi</div> @enderror
                       </div>
                     </div>  
 
@@ -28,7 +28,7 @@
                       <label for="gambar" class="col-sm-3 ml-3 col-form-label">File Upload</label>
                       <div class="col-sm-7">
                         <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="formFile" name="gambar">
-                        @error('gambar')<div class="invalid-feedback">Gambar harus diupload</div> @enderror
+                        @error('gambar')<div class="invalid-feedback">Gambar Harus Diisi</div> @enderror
                       </div>
                     </div> 
 
@@ -36,7 +36,7 @@
                       <label for="deskripsi" class="col-sm-3 ml-3 col-form-label">Deskripsi</label>
                       <div class="col-sm-7">
                         <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" rows="3" name="deskripsi"></textarea>
-                        @error('deskripsi')<div class="invalid-feedback">Deskripsi harus diisi</div> @enderror
+                        @error('deskripsi')<div class="invalid-feedback">Deskripsi Harus Diisi</div> @enderror
                       </div>
                     </div>
 
@@ -44,7 +44,7 @@
                       <label for="lokasi" class="col-sm-3 ml-3 col-form-label">Lokasi</label>
                       <div class="col-sm-7">
                         <input type="text" class="form-control @error('lokasi') is-invalid @enderror" name="lokasi">
-                        @error('lokasi')<div class="invalid-feedback">Lokasi harus diisi</div> @enderror
+                        @error('lokasi')<div class="invalid-feedback">Lokasi Harus Diisi</div> @enderror
                       </div>
                     </div>
                                                           

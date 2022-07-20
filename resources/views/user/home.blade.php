@@ -14,7 +14,7 @@
         <img src="/assets/img/TELE.jpg" class="d-block w-100">
           <div class="carousel-caption d-none d-md-block">
             <h5>Dinas Kebudayaan dan Pariwisata Samosir</h5>
-              <p>Some representative placeholder content for the first slide.</p>
+              <p><b>Kabupaten Samosir - Satahi Saoloan</b> "Landasan untuk menciptakan persatuan dan kesatuan yang identik dengan azas kebersamaan atau gotong-royong dalam konteks yang berdampak positif untuk membangun Kabupaten Samosir"</p>
           </div>
       </div>
 
@@ -22,15 +22,15 @@
         <img src="/assets/img/Pusat Informasi Geopark.jpg" class="d-block w-100">
           <div class="carousel-caption d-none d-md-block">
             <h5>Dinas Kebudayaan dan Pariwisata Samosir</h5>
-              <p>Di alam, semuanya sempurna. Pohon bisa berkerut, bengkok dengan cara yang aneh, dan masih cantik</p>
+              <p><b>Samosir - Negeri Indah Kepingan Surga</b> "Di alam, semuanya sempurna. Pohon bisa berkerut, bengkok dengan cara yang aneh, dan masih cantik"</p>
           </div>
       </div>
 
       <div class="carousel-item">
-        <img src="/assets/img/Bukit Holbung.jpg" class="d-block w-200">
+        <img src="/assets/img/Bukit Holbung.jpg" class="d-block w-100">
           <div class="carousel-caption d-none d-md-block">
             <h5>Dinas Kebudayaan dan Pariwisata Samosir</h5>
-              <p>Some representative placeholder content for the third slide.</p>
+              <p><b>Samosir - Selamat Memasuki Gerbang Surga</b> "Berinteraksi, mengenali, dan menikmati keindahan alam, menyadarkan kita untuk menjaga dan melindungi kelestarian alam Indonesia"</p>
           </div>
       </div>
         

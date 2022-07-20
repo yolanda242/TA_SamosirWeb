@@ -23,7 +23,7 @@
                         <input type="text" class="form-control @error('nama_objek') is-invalid @enderror" name="nama_objek" value="{{$edits->nama_objek}}">
                         @error('nama_objek')
                         <div class="invalid-feedback">
-                          {{ $message }}
+                          Nama Objek Wisata Harus Diisi
                         </div>
                         @enderror
                       </div>
@@ -42,7 +42,7 @@
                         <textarea class="form-control @error('deskripsi') is-invalid @enderror"  rows="3" name="deskripsi">{{$edits->deskripsi}}</textarea>
                         @error('deskripsi')
                         <div class="invalid-feedback">
-                          {{ $message }}
+                          Deskripsi Harus Diisi
                         </div>
                         @enderror
                       </div>
@@ -54,7 +54,7 @@
                         <input type="text" class="form-control @error('lokasi') is-invalid @enderror" name="lokasi" value="{{$edits->lokasi}}">
                         @error('lokasi')
                         <div class="invalid-feedback">
-                          {{ $message }}
+                          Lokasi Harus Diisi
                         </div>
                         @enderror
                       </div>
