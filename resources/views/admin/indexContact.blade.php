@@ -71,7 +71,6 @@
                                       <th scope="col">id</th>
                                       <th scope="col">Contact</th>
                                       <th scope="col">Jenis Contact</th>
-                                      <th scope="col">Link</th>
                                       <th scope="col">Aksi</th>
                                     </tr>
                                   </thead>
@@ -83,7 +82,6 @@
                                       <td>{{ $no++ }}</td>
                                       <td>{{ $value->contact}}</td>
                                       <td>{{ $value->jenis_contact }}</td>
-                                      <td>{{ $value->link }}</td>
                                       <td>
                                         <a href="/contactus/Edit_Contact/{{$value->id}}" class="btn btn-warning btn-sm">Edit</a>
                                         <a href="/contactus/Delete_Contact/{{$value->id}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure want to delete?')">Hapus</a>
